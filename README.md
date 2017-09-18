@@ -7,6 +7,6 @@ The project is about label and track detection.
 
 Develop a useful product that includes auto-detecting objects in videos.  Examples of such products include:  education, auto-tagging of products with hyper links for advertising.
 Industrial exmaple:  
-> Label antennas in all video towers captured by Drones and measure their orinetation.
-> Detect and track birds in airports
-> Detect and characterize cars for searching in databases
+Label antennas in all video towers captured by Drones and measure their orinetation.
+Detect and track birds in airports
+Detect and characterize cars for searching in databases
