@@ -10,3 +10,8 @@ Industrial exmaple:
 Label antennas in all video towers captured by Drones and measure their orinetation.
 Detect and track birds in airports
 Detect and characterize cars for searching in databases
+
+# TensorFlow
+Reference: https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/ios
+           https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/android
+Implemented and modified the template code provided by TensorFlow, for both iOS and Android.
