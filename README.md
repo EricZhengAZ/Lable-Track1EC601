@@ -14,4 +14,4 @@ Detect and characterize cars for searching in databases
 # TensorFlow
 Reference: https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/ios
            https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/android
-Implemented and modified the template code provided by TensorFlow, for both iOS and Android.
+Implemented and modified the template code provided by TensorFlow, for both iOS and Android. Trained the model to recognize more objects.
