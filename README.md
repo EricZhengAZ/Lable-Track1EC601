@@ -3,7 +3,7 @@ For team 15  in EC601 2017
 
 Team members: Davide Lucchi, Honghao Zheng, Jiahao Zhao, Yanxing Zhang
 
-The project is about label and track detection.
+The project is about real-time object recognition, giving the shopping links of the recognized object.
 
 Develop a useful product that includes auto-detecting objects in videos. Examples of such products include:  education, auto-tagging of products with hyper links for advertising.
 
