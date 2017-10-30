@@ -5,7 +5,7 @@ Here we also provided two of our trained models. They have almost the same categ
 
 ![alt text](https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/iOS_app/samples/IMG_1377.PNG)
 ![alt text](https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/iOS_app/samples/IMG_1378.PNG)
-
+ <img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/iOS_app/samples/IMG_1377.PNG" width = "360" height = "640" alt="Laptop" align=center />
 # Dateset
 Celtech 101: http://www.vision.caltech.edu/Image_Datasets/Caltech101/
 
