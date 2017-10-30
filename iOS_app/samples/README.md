@@ -1,1 +1,1 @@
-This folder contains samples.
+This folder contains screenshots for samples.
