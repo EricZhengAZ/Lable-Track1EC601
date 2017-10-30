@@ -5,7 +5,7 @@ Here we also provided two of our trained models. They have almost the same categ
 
 <img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/iOS_app/samples/IMG_1378.PNG" width = "360" height = "640" alt="Laptop" align=center /> <img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/iOS_app/samples/IMG_1377.PNG" width = "360" height = "640" alt="Keyboard" align=center />
 
-<img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/iOS_app/samples/IMG_1380.PNG" width = "180" height = "320" alt="Keyboard" align=center /><img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/iOS_app/samples/IMG_1380.PNG" width = "180" height = "320" alt="Keyboard" align=center /><img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/iOS_app/samples/IMG_1380.PNG" width = "180" height = "320" alt="Keyboard" align=center />
+<img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/iOS_app/samples/IMG_1380.PNG" width = "270" height = "480" alt="Keyboard" align=center /><img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/iOS_app/samples/IMG_1380.PNG" width = "270" height = "480" alt="Keyboard" align=center /><img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/iOS_app/samples/IMG_1380.PNG" width = "270" height = "480" alt="Keyboard" align=center />
 
 # Dateset
 Celtech 101: http://www.vision.caltech.edu/Image_Datasets/Caltech101/
