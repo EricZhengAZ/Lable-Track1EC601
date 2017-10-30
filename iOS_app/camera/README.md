@@ -1,8 +1,8 @@
 This folder contains the xcode project for iPhone.
 
 
-cd iOS_app/camera/
+  cd iOS_app/camera/
 
-pod install
+  pod install
 
-open tf_camera_example.xcworkspace
+  open tf_camera_example.xcworkspace
