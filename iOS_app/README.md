@@ -4,7 +4,7 @@ We trained our own model, which is a combination of Celtech 101, celtech 256 and
 Here we also provided two of our trained models. They have almost the same categoirs but were trained with different steps. 
 
 # Samples
-This is a demo of running the trained model with 20000 steps.
+This is a demo running with the model celtech101&256_20000.
 
 <img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/iOS_app/samples/IMG_1378.PNG" width = "270" height = "480" alt="Laptop" align=center /> <img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/iOS_app/samples/IMG_1377.PNG" width = "270" height = "480" alt="Keyboard" align=center />  <img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/iOS_app/samples/IMG_1379.PNG" width = "270" height = "480" alt="Keyboard" align=center />
 
