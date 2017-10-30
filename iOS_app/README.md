@@ -1,6 +1,7 @@
 # iOS app
 This is an iOS app based on the example app provided by Tensorflow. The model that the orginal app used was Inception_v1. 
-We trained our own model, which is a combination of Celtech 101, celtech 256 and few personalized categories. 
+We trained our own models, which were combinations of Celtech 101, celtech 256 and few personalized categories. 
+
 Here we also provided two of our trained models. They have almost the same categoirs but were trained with different steps. 
 
 # Samples
