@@ -5,13 +5,17 @@ Here we also provided two of our trained models. They have almost the same categ
 
 # Dateset: 
 Celtech 101: http://www.vision.caltech.edu/Image_Datasets/Caltech101/
+
 Celtech 256: http://www.vision.caltech.edu/Image_Datasets/Caltech256/
 
 # Reference: 
 https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/ios/
+
 http://machinethink.net/blog/tensorflow-on-ios/
+
 https://www.tensorflow.org/tutorials/image_retraining
 
 # 参考：      
 http://www.jianshu.com/p/f096fe2212ce
+
 http://blog.csdn.net/chufazhe/article/details/53835088
