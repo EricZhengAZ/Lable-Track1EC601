@@ -16,6 +16,7 @@
 
 package org.tensorflow.demo;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
@@ -23,10 +24,14 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.media.ImageReader.OnImageAvailableListener;
+import android.net.Uri;
 import android.os.SystemClock;
 import android.util.Size;
 import android.util.TypedValue;
 import android.view.Display;
+import android.view.View;
+import android.widget.TextView;
+
 import java.util.List;
 import java.util.Vector;
 import org.tensorflow.demo.OverlayView.DrawCallback;
@@ -41,6 +46,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   protected static final boolean SAVE_PREVIEW_BITMAP = false;
 
   private ResultsView resultsView;
+  private TextView best_item;
 
   private Bitmap rgbFrameBitmap = null;
   private Bitmap croppedBitmap = null;
@@ -88,6 +94,8 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
   private BorderedText borderedText;
 
+  private String base_link = "http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=";
+  private String buy_link;
 
   @Override
   protected int getLayoutId() {
@@ -173,10 +181,52 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
               resultsView = (ResultsView) findViewById(R.id.results);
             }
             resultsView.setResults(results);
+            Float max_score = 0f;
+            if (results.size() > 0) {
+              Classifier.Recognition best = results.get(0);
+              for (Classifier.Recognition r : results) {
+                if (r.getConfidence() > max_score) {
+                  max_score = r.getConfidence();
+                  best = r;
+                }
+              }
+
+              buy_link = base_link + best.getTitle();
+
+              final Classifier.Recognition best_p = best;
+
+              runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+
+                  //stuff that updates ui
+                  // set the best item
+                  best_item = (TextView) findViewById(R.id.best_item);
+                  best_item.setText(best_p.getTitle());
+
+                }
+              });
+
+            }
+
             requestRender();
             readyForNextImage();
           }
         });
+  }
+
+  public void buy(View view)
+  {
+    Intent i = new Intent(Intent.ACTION_VIEW,Uri.parse(buy_link));
+    startActivityForResult(i,1000);
+  }
+
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    if (requestCode == 1000) {
+      Intent i= new Intent(getBaseContext(),ClassifierActivity.class);
+      startActivity(i);
+    }
   }
 
   @Override
