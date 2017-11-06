@@ -26,3 +26,5 @@ Implemented and modified the template code provided by TensorFlow, for both iOS 
 
 # How to use
 To build our project open the folder MVP Android App\tensorflow-master\tensorflow\examples\android with Android studio. All the dependacies should download automatically and the App will be ready to be installed.
+
+iOS_app is a template to show the basic ideas about training models.
