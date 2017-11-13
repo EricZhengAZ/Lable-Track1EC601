@@ -3,20 +3,13 @@ For team 15  in EC601 2017
 
 Team members: Davide Lucchi, Honghao Zheng, Jiahao Zhao, Yanxing Zhang
 
-The project is about real-time object recognition, giving the shopping links of the recognized object.
+Our Android App is able to recognize objects in real time and it provides a custom link to Amazon.com to buy the currently recognized object. 
+The App is based on the Tensorflow example [TF Classify](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/android) which uses the Google Inception  model to classify camera frames in real-time, displaying the top results in an overlay on the camera image.
+To improve this model we are training our own dataset where we added more objects.
 
-Develop a useful product that includes auto-detecting objects in videos. Examples of such products include:  education, auto-tagging of products with hyper links for advertising.
-
-Industrial exmaples:  
-
-Label antennas in all video towers captured by Drones and measure their orinetation.
-
-Detect and track birds in airports
-
-Detect and characterize cars for searching in databases
 
 # How to use
-To build our project open the folder MVP Android App\tensorflow-master\tensorflow\examples\android with Android studio. All the dependacies should download automatically and the App will be ready to be installed.
+To build our project open the folder app\android with Android studio. All the dependacies should download automatically and the App will be ready to be installed.
 
 iOS_app is a template to show the basic ideas about training models.
 
