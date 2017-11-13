@@ -13,7 +13,7 @@ load(
 
 exports_files(["LICENSE"])
 
-LINKER_SCRIPT = "//tensorflow/contrib/android:jni/version_script.lds"
+LINKER_SCRIPT = "//app/contrib/android:jni/version_script.lds"
 
 # libtensorflow_demo.so contains the native code for image colorspace conversion
 # and object tracking used by the demo. It does not require TF as a dependency
@@ -53,7 +53,7 @@ cc_library(
     name = "tensorflow_native_libs",
     srcs = [
         ":libtensorflow_demo.so",
-        "//tensorflow/contrib/android:libtensorflow_inference.so",
+        "//app/contrib/android:libtensorflow_inference.so",
     ],
     tags = [
         "manual",
@@ -69,7 +69,7 @@ android_binary(
     # Package assets from assets dir as well as all model targets. Remove undesired models
     # (and corresponding Activities in source) to reduce APK size.
     assets = [
-        "//tensorflow/examples/android/assets:asset_files",
+        "//app/examples/android/assets:asset_files",
         ":external_assets",
     ],
     assets_dir = "",
@@ -84,7 +84,7 @@ android_binary(
     ],
     deps = [
         ":tensorflow_native_libs",
-        "//tensorflow/contrib/android:android_tensorflow_inference_java",
+        "//app/contrib/android:android_tensorflow_inference_java",
     ],
 )
 
@@ -98,7 +98,7 @@ filegroup(
         "@stylize//:model_files",
     ],
 )
-# LINT.ThenChange(//tensorflow/examples/android/download-models.gradle)
+# LINT.ThenChange(//app/examples/android/download-models.gradle)
 
 filegroup(
     name = "all_files",
@@ -113,7 +113,7 @@ filegroup(
             "libs/**",
         ],
     ),
-    visibility = ["//tensorflow:__subpackages__"],
+    visibility = ["//app:__subpackages__"],
 )
 
 filegroup(
