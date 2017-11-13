@@ -1,7 +1,7 @@
 # Lable-Track1EC601
-For team 15  in EC601 2017
+## Team 11 - EC601 2017
 
-Team members: Davide Lucchi, Honghao Zheng, Jiahao Zhao, Yanxing Zhang
+## Team members: Davide Lucchi, Honghao Zheng, Jiahao Zhao, Yanxing Zhang
 
 Our Android App is able to recognize objects in real time and it provides a custom link to Amazon.com to buy the currently recognized object. 
 The App is based on the Tensorflow example [TF Classify](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/android) which uses the Google Inception  model to classify camera frames in real-time, displaying the top results in an overlay on the camera image.
