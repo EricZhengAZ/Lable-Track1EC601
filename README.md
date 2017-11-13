@@ -19,3 +19,5 @@ https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/ios
 
 https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/android
 
+https://www.tensorflow.org/tutorials/image_retraining
+
