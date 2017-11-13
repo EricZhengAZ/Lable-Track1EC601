@@ -11,8 +11,6 @@ The models that we trained so far are available in the folder retrained_models.
 # How to use
 To build our project open the folder app/android with Android studio. All the dependacies should download automatically and the App will be ready to be installed.
 
-iOS_app is a template to show the basic ideas about training models.
-
 # Reference: 
 
 https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/ios
