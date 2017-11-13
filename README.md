@@ -8,6 +8,8 @@ The App is based on the Tensorflow example [TF Classify](https://github.com/tens
 To improve this model we are training our own dataset where we added more objects.
 The models that we trained so far are available in the folder retrained_models.
 
+The folder old_apps contains some old/first versions of our App that we are no longer using.
+
 # How to use
 To build our project open the folder app/android with Android studio. All the dependacies should download automatically and the App will be ready to be installed.
 
