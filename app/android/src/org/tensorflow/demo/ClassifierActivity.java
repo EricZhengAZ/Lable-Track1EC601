@@ -191,22 +191,36 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
                 }
               }
 
-              buy_link = base_link + best.getTitle();
+              if (max_score > 0.30) {
+                buy_link = base_link + best.getTitle();
 
-              final Classifier.Recognition best_p = best;
+                final Classifier.Recognition best_p = best;
 
-              runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
+                runOnUiThread(new Runnable() {
+                  @Override
+                  public void run() {
 
-                  //stuff that updates ui
-                  // set the best item
-                  best_item = (TextView) findViewById(R.id.best_item);
-                  best_item.setText(best_p.getTitle());
+                    //stuff that updates ui
+                    // set the best item
+                    best_item = (TextView) findViewById(R.id.best_item);
+                    best_item.setText(best_p.getTitle());
 
-                }
-              });
+                  }
+                });
+              }
+              else
+              {
+                runOnUiThread(new Runnable() {
+                  @Override
+                  public void run() {
 
+                    //stuff that updates ui
+                    // set the best item
+                    best_item = (TextView) findViewById(R.id.best_item);
+                    best_item.setText("");
+                  }
+                });
+              }
             }
 
             requestRender();
@@ -224,8 +238,8 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     if (requestCode == 1000) {
-      Intent i= new Intent(getBaseContext(),ClassifierActivity.class);
-      startActivity(i);
+      //Intent i= new Intent(getBaseContext(),ClassifierActivity.class);
+      //startActivity(i);
     }
   }
 

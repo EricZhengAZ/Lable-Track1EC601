@@ -30,6 +30,8 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
 import java.io.IOException;
 import java.util.List;
 import org.tensorflow.demo.env.ImageUtils;
@@ -37,7 +39,7 @@ import org.tensorflow.demo.env.Logger;
 import org.tensorflow.demo.R; // Explicit import needed for internal Google builds.
 
 public class LegacyCameraConnectionFragment extends Fragment {
-  private Camera camera;
+  private static Camera camera = null;
   private static final Logger LOGGER = new Logger();
   private Camera.PreviewCallback imageListener;
   private Size desiredSize;
@@ -77,9 +79,9 @@ public class LegacyCameraConnectionFragment extends Fragment {
             final SurfaceTexture texture, final int width, final int height) {
 
           int index = getCameraId();
-          camera = Camera.open(index);
 
           try {
+            camera = Camera.open();
             Camera.Parameters parameters = camera.getParameters();
             parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
 
@@ -96,8 +98,10 @@ public class LegacyCameraConnectionFragment extends Fragment {
             camera.setDisplayOrientation(90);
             camera.setParameters(parameters);
             camera.setPreviewTexture(texture);
-          } catch (IOException exception) {
+          } catch (Exception exception) {
             camera.release();
+            Toast toast = Toast.makeText(getActivity(),"An error occur, the camera couldn't be opened",Toast.LENGTH_LONG);
+            toast.show();
           }
 
           camera.setPreviewCallbackWithBuffer(imageListener);
