@@ -1,3 +1,8 @@
+roses
+daisy
+dandelion
+tulips
+sunflowers
 dummy
 kit fox
 English setter

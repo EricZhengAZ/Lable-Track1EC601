@@ -16,6 +16,7 @@
 
 package org.tensorflow.demo;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -29,7 +30,13 @@ import android.os.SystemClock;
 import android.util.Size;
 import android.util.TypedValue;
 import android.view.Display;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.List;
@@ -45,7 +52,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
   protected static final boolean SAVE_PREVIEW_BITMAP = false;
 
-  private ResultsView resultsView;
+ // private ResultsView resultsView;
   private TextView best_item;
 
   private Bitmap rgbFrameBitmap = null;
@@ -70,15 +77,15 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   // --input_node_names="Mul" \
   // --output_node_names="final_result" \
   // --input_binary=true
-  private static final int INPUT_SIZE = 224;
-  private static final int IMAGE_MEAN = 117;
-  private static final float IMAGE_STD = 1;
-  private static final String INPUT_NAME = "input";
-  private static final String OUTPUT_NAME = "output";
+  private static final int INPUT_SIZE = 299;
+  private static final int IMAGE_MEAN = 128;
+  private static final float IMAGE_STD = 128;
+  private static final String INPUT_NAME = "Mul";
+  private static final String OUTPUT_NAME = "final_result";
 
 
-  private static final String MODEL_FILE = "file:///android_asset/tensorflow_inception_graph.pb";
-  private static final String LABEL_FILE ="file:///android_asset/imagenet_comp_graph_label_strings.txt";
+  private static final String MODEL_FILE = "file:///android_asset/rounded_graph.pb";
+  private static final String LABEL_FILE ="file:///android_asset/retrained_labels.txt";
 
 
   private static final boolean MAINTAIN_ASPECT = true;
@@ -97,6 +104,8 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   private String base_link = "http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=";
   private String buy_link;
 
+    private WebView webView = null;
+
   @Override
   protected int getLayoutId() {
     return R.layout.camera_connection_fragment;
@@ -108,6 +117,41 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   }
 
   private static final float TEXT_SIZE_DIP = 10;
+
+
+    @Override
+    public void onBackPressed() {
+        // If the back button is pressed then exit the app
+        super.onBackPressed();
+        signOut();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                if (webView == null || webView.getVisibility() == View.INVISIBLE) {
+                    signOut();
+                }
+                else if (webView.canGoBack()) {
+                    webView.goBack();
+                }
+                else
+                {
+                    webView.setVisibility(View.INVISIBLE);
+                    webView.clearHistory();
+                    webView.clearCache(true);
+                    webView.removeAllViews();
+                    webView.destroyDrawingCache();
+                    webView.destroy();
+                }
+
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
   @Override
   public void onPreviewSizeChosen(final Size size, final int rotation) {
@@ -177,10 +221,10 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
             lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;
             LOGGER.i("Detect: %s", results);
             cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
-            if (resultsView == null) {
+            /*if (resultsView == null) {
               resultsView = (ResultsView) findViewById(R.id.results);
-            }
-            resultsView.setResults(results);
+            }*/
+            //resultsView.setResults(results);
             Float max_score = 0f;
             if (results.size() > 0) {
               Classifier.Recognition best = results.get(0);
@@ -203,7 +247,8 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
                     //stuff that updates ui
                     // set the best item
                     best_item = (TextView) findViewById(R.id.best_item);
-                    best_item.setText(best_p.getTitle());
+                    if (best_item != null && best_p != null)
+                        best_item.setText(best_p.getTitle());
 
                   }
                 });
@@ -217,7 +262,8 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
                     //stuff that updates ui
                     // set the best item
                     best_item = (TextView) findViewById(R.id.best_item);
-                    best_item.setText("");
+                    if (best_item != null)
+                        best_item.setText("");
                   }
                 });
               }
@@ -231,9 +277,61 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
   public void buy(View view)
   {
-    Intent i = new Intent(Intent.ACTION_VIEW,Uri.parse(buy_link));
-    startActivityForResult(i,1000);
+      if (buy_link.compareTo("") == 0)
+          return;
+
+    //Intent i = new Intent(Intent.ACTION_WEB_SEARCH,Uri.parse(buy_link));
+    //startActivityForResult(i,1000);
+
+      if (webView == null)
+            webView = (WebView) findViewById(R.id.webview);
+
+
+      final ProgressBar progressBar = new ProgressBar(ClassifierActivity.this);
+
+      webView.setWebChromeClient(new WebChromeClient() {
+          public void onProgressChanged(WebView view, int progress) {
+              progressBar.setProgress(progress);
+              if (progress == 100) {
+                  progressBar.setVisibility(View.GONE);
+
+              } else {
+                  progressBar.setVisibility(View.VISIBLE);
+
+              }
+          }
+      });
+
+      // Makes Progress bar Visible
+
+     /* final ProgressDialog progressDialog = new ProgressDialog(ClassifierActivity.this);
+      progressDialog.setMessage("Loading...");
+      progressDialog.show();
+*/
+
+      /*webView.setWebViewClient(new WebViewClient() {
+
+         @Override
+          public void onPageFinished(WebView view, String url) {
+              if (progressDialog.isShowing()) {
+                  progressDialog.dismiss();
+              }
+          }
+      });*/
+      webView.setWebViewClient(new MyWebViewClient());
+      webView.getSettings().setJavaScriptEnabled(true);
+      webView.setVisibility(View.VISIBLE);
+      webView.loadUrl(buy_link);
   }
+
+
+    private class MyWebViewClient extends WebViewClient {
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            view.loadUrl(url);
+            return true;
+        }
+    }
 
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {

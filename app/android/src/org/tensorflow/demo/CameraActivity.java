@@ -19,6 +19,7 @@ package org.tensorflow.demo;
 import android.Manifest;
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -37,9 +38,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Trace;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Size;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
@@ -52,7 +57,7 @@ import org.tensorflow.demo.env.ImageUtils;
 import org.tensorflow.demo.env.Logger;
 import org.tensorflow.demo.R; // Explicit import needed for internal Google builds.
 
-public abstract class CameraActivity extends Activity
+public abstract class CameraActivity extends AppCompatActivity
     implements OnImageAvailableListener, Camera.PreviewCallback {
   private static final Logger LOGGER = new Logger();
 
@@ -82,12 +87,21 @@ public abstract class CameraActivity extends Activity
   @Override
   protected void onCreate(final Bundle savedInstanceState) {
     LOGGER.d("onCreate " + this);
+
     super.onCreate(null);
+
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+
 
     setContentView(R.layout.activity_camera);
 
+    ActionBar toolbar = getSupportActionBar();
     mAuth = FirebaseAuth.getInstance();
+    toolbar.setTitle(mAuth.getCurrentUser().getDisplayName());
+    toolbar.setDisplayHomeAsUpEnabled(true);
+    toolbar.setDisplayShowHomeEnabled(true);
+
 
     if (hasPermission()) {
       setFragment();
@@ -96,12 +110,10 @@ public abstract class CameraActivity extends Activity
     }
   }
 
-  @Override
-  public void onBackPressed() {
-    // If the back button is pressed then exit the app
-    super.onBackPressed();
-    signOut();
-  }
+
+
+
+
 
   private byte[] lastPreviewFrame;
 

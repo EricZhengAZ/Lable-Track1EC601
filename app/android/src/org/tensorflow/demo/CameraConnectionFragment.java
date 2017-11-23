@@ -23,6 +23,7 @@ import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.ImageFormat;
 import android.graphics.Matrix;
@@ -42,14 +43,17 @@ import android.media.ImageReader.OnImageAvailableListener;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -68,7 +72,7 @@ public class CameraConnectionFragment extends Fragment {
    * The camera preview size will be chosen to be the smallest frame by pixel size capable of
    * containing a DESIRED_SIZE x DESIRED_SIZE square.
    */
-  private static final int MINIMUM_PREVIEW_SIZE = 320;
+  private static final int MINIMUM_PREVIEW_SIZE = 480;//320;
 
   /**
    * Conversion from screen rotation to JPEG orientation.
@@ -82,6 +86,8 @@ public class CameraConnectionFragment extends Fragment {
     ORIENTATIONS.append(Surface.ROTATION_180, 270);
     ORIENTATIONS.append(Surface.ROTATION_270, 180);
   }
+
+  protected static WebView webView;
 
   /**
    * {@link android.view.TextureView.SurfaceTextureListener} handles several lifecycle events on a
@@ -306,6 +312,10 @@ public class CameraConnectionFragment extends Fragment {
     }
   }
 
+
+
+
+
   public static CameraConnectionFragment newInstance(
       final ConnectionCallback callback,
       final OnImageAvailableListener imageListener,
@@ -317,12 +327,15 @@ public class CameraConnectionFragment extends Fragment {
   @Override
   public View onCreateView(
       final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
-    return inflater.inflate(layout, container, false);
+      return inflater.inflate(layout, container, false);
   }
+
 
   @Override
   public void onViewCreated(final View view, final Bundle savedInstanceState) {
     textureView = (AutoFitTextureView) view.findViewById(R.id.texture);
+
+
   }
 
   @Override

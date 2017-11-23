@@ -45,6 +45,7 @@ public class LogInActivity extends AppCompatActivity implements
 
     private String TAG1 = "Action";
     public static String USER = "User";
+    public static String current_user = "";
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private Button signInButton;
@@ -66,6 +67,7 @@ public class LogInActivity extends AppCompatActivity implements
         // inflate the layout
         setContentView(R.layout.activity_log_in);
 
+
         /*
             set up Firebase email/passoword authentication
         */
@@ -84,6 +86,8 @@ public class LogInActivity extends AppCompatActivity implements
                         intent.putExtra(USER,email);
                     else
                         intent.putExtra(USER,user.getDisplayName());
+
+                    current_user = user.getDisplayName();
                     startActivity(intent);
                     // remove this activity from the back stack
                     finish();
@@ -380,7 +384,7 @@ public class LogInActivity extends AppCompatActivity implements
 
     public boolean validate(String email,String password)
     {
-        if (!email.contains("@"))
+        if (email.length() <= 0 || !email.contains("@"))
         {
             Toast.makeText(LogInActivity.this, "Provide a valid email address",
                     Toast.LENGTH_LONG).show();
