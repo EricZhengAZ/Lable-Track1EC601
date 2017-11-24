@@ -1,9 +1,9 @@
-# Lable-Track1EC601
+# RecBuy
 ## Team 11 - EC601 2017
 
 ## Team members: Davide Lucchi, Honghao Zheng, Jiahao Zhao, Yanxing Zhang
 
-Our Android App is able to recognize objects in real time and it provides a custom link to Amazon.com to buy the currently recognized object. 
+Our Android App is able to Recognize objects in real time and it provides a custom link to Amazon.com to Buy the currently recognized object hence the name RecBuy! 
 The App is based on the Tensorflow example [TF Classify](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/android) which uses the Google Inception  model to classify camera frames in real-time, displaying the top results in an overlay on the camera image.
 To improve this model we are training our own dataset where we added more objects.
 The script that we are using to train our own model can be found [here](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/image_retraining/retrain.py)

@@ -18,7 +18,7 @@
     <string name="request_permission">This sample needs camera permission.</string>
     <string name="camera_error">This device doesn\'t support Camera2 API.</string>
 
-    <string name="app_name">Label &amp; Sell</string>
+    <string name="app_name">RecBuy</string>
     <string name="title_activity_l">Sign in</string>
  
     <string name="facebook_app_id">141476236578406</string>

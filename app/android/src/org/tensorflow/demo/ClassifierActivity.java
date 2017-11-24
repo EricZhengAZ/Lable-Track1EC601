@@ -122,30 +122,32 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     @Override
     public void onBackPressed() {
         // If the back button is pressed then exit the app
-        super.onBackPressed();
-        signOut();
+        back_pressed();
     }
 
+    void back_pressed()
+    {
+        if (webView == null || webView.getVisibility() == View.INVISIBLE) {
+            signOut();
+        }
+        else if (webView.canGoBack()) {
+            webView.goBack();
+        }
+        else
+        {
+            webView.setVisibility(View.INVISIBLE);
+            webView.clearHistory();
+            webView.clearCache(true);
+            webView.removeAllViews();
+            webView.destroyDrawingCache();
+            webView.destroy();
+        }
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                if (webView == null || webView.getVisibility() == View.INVISIBLE) {
-                    signOut();
-                }
-                else if (webView.canGoBack()) {
-                    webView.goBack();
-                }
-                else
-                {
-                    webView.setVisibility(View.INVISIBLE);
-                    webView.clearHistory();
-                    webView.clearCache(true);
-                    webView.removeAllViews();
-                    webView.destroyDrawingCache();
-                    webView.destroy();
-                }
-
+                back_pressed();
                 return true;
 
             default:
@@ -277,7 +279,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
   public void buy(View view)
   {
-      if (buy_link.compareTo("") == 0)
+      if (buy_link == null || buy_link.compareTo("") == 0)
           return;
 
     //Intent i = new Intent(Intent.ACTION_WEB_SEARCH,Uri.parse(buy_link));
