@@ -19,6 +19,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#59a9ff</color>
 
+    <color name="colorPrimary2">#4461ff</color>
+    <color name="colorPrimaryDark2">#d3303f9f</color>
+    <color name="colorAccent2">#ed74b7ff</color>
+
     <color name="white">#ffffff</color>
     <color name="blue_grey_500">#607D8B</color>
     <color name="blue_grey_600">#546E7A</color>

@@ -429,6 +429,9 @@ public class LogInActivity extends AppCompatActivity implements
      */
     public void signIn(String email, String password)
     {
+        if (!validate(email,password))
+            return;
+
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
