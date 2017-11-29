@@ -14,6 +14,7 @@ The folder old_apps contains an iOS App that we are no longer using. It is a sim
 # How to use
 To build our project open the folder app/android with Android studio. All the dependacies should download automatically and the App will be ready to be installed.
 
+If Android studio gives you an error message related to i then disable instant run in File -> Settings -> Build,Execution, Deployment -> Instant Run
 # Reference: 
 
 https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/ios
