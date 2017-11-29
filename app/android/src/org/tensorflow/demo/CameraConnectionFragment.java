@@ -87,7 +87,6 @@ public class CameraConnectionFragment extends Fragment {
     ORIENTATIONS.append(Surface.ROTATION_270, 180);
   }
 
-  protected static WebView webView;
 
   /**
    * {@link android.view.TextureView.SurfaceTextureListener} handles several lifecycle events on a
@@ -334,6 +333,7 @@ public class CameraConnectionFragment extends Fragment {
   @Override
   public void onViewCreated(final View view, final Bundle savedInstanceState) {
     textureView = (AutoFitTextureView) view.findViewById(R.id.texture);
+
 
 
   }

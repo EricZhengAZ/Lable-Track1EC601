@@ -26,7 +26,10 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.media.ImageReader.OnImageAvailableListener;
 import android.net.Uri;
+import android.os.Bundle;
+import android.os.Handler;
 import android.os.SystemClock;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Size;
 import android.util.TypedValue;
 import android.view.Display;
@@ -47,7 +50,7 @@ import org.tensorflow.demo.env.ImageUtils;
 import org.tensorflow.demo.env.Logger;
 import org.tensorflow.demo.R; // Explicit import needed for internal Google builds.
 
-public class ClassifierActivity extends CameraActivity implements OnImageAvailableListener {
+public class ClassifierActivity extends CameraActivity implements OnImageAvailableListener, SwipeRefreshLayout.OnRefreshListener {
   private static final Logger LOGGER = new Logger();
 
   protected static final boolean SAVE_PREVIEW_BITMAP = false;
@@ -106,6 +109,17 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
     private WebView webView = null;
 
+    private SwipeRefreshLayout mySwipeRefreshLayout = null;
+
+    @Override
+    protected void onCreate(final Bundle onSavedInstanceState)
+    {
+        super.onCreate(onSavedInstanceState);
+
+
+
+    }
+
   @Override
   protected int getLayoutId() {
     return R.layout.camera_connection_fragment;
@@ -117,6 +131,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   }
 
   private static final float TEXT_SIZE_DIP = 10;
+
 
 
     @Override
@@ -136,6 +151,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
         else
         {
             webView.setVisibility(View.INVISIBLE);
+            findViewById(R.id.swipe_container).setVisibility(View.INVISIBLE);
             webView.clearHistory();
             webView.clearCache(true);
             webView.removeAllViews();
@@ -277,61 +293,80 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
         });
   }
 
-  public void buy(View view)
-  {
+    @Override
+    public void onRefresh() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mySwipeRefreshLayout.setRefreshing(false);
+            }
+        }, 5000);
+    }
+
+  public void buy(View view) {
       if (buy_link == null || buy_link.compareTo("") == 0)
           return;
 
-    //Intent i = new Intent(Intent.ACTION_WEB_SEARCH,Uri.parse(buy_link));
-    //startActivityForResult(i,1000);
+      //Intent i = new Intent(Intent.ACTION_WEB_SEARCH,Uri.parse(buy_link));
+      //startActivityForResult(i,1000);
 
       if (webView == null)
-            webView = (WebView) findViewById(R.id.webview);
+          webView = (WebView) findViewById(R.id.webview);
 
+      if (mySwipeRefreshLayout == null) {
+          mySwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
 
-      final ProgressBar progressBar = new ProgressBar(ClassifierActivity.this);
+          mySwipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
+                  android.R.color.background_light);
 
-      webView.setWebChromeClient(new WebChromeClient() {
-          public void onProgressChanged(WebView view, int progress) {
-              progressBar.setProgress(progress);
-              if (progress == 100) {
-                  progressBar.setVisibility(View.GONE);
-
-              } else {
-                  progressBar.setVisibility(View.VISIBLE);
-
+          mySwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+              @Override
+              public void onRefresh() {
+                  System.out.println("refreshing");
+                  webView.loadUrl(buy_link);
               }
-          }
-      });
+          });
+      }
 
-      // Makes Progress bar Visible
 
-     /* final ProgressDialog progressDialog = new ProgressDialog(ClassifierActivity.this);
-      progressDialog.setMessage("Loading...");
-      progressDialog.show();
-*/
 
-      /*webView.setWebViewClient(new WebViewClient() {
 
-         @Override
-          public void onPageFinished(WebView view, String url) {
-              if (progressDialog.isShowing()) {
-                  progressDialog.dismiss();
-              }
-          }
-      });*/
       webView.setWebViewClient(new MyWebViewClient());
       webView.getSettings().setJavaScriptEnabled(true);
       webView.setVisibility(View.VISIBLE);
+      findViewById(R.id.swipe_container).setVisibility(View.VISIBLE);
       webView.loadUrl(buy_link);
+
+      mySwipeRefreshLayout.post(new Runnable() {
+          @Override
+          public void run() {
+              mySwipeRefreshLayout.setRefreshing(true);
+          }
+      });
+
   }
+
 
 
     private class MyWebViewClient extends WebViewClient {
         @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            view.loadUrl(url);
-            return true;
+        public void onPageFinished(WebView view, String url) {
+            mySwipeRefreshLayout.setRefreshing(false);
+            buy_link = url;
+            super.onPageFinished(view, url);
+        }
+
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon)
+        {
+            mySwipeRefreshLayout.post(new Runnable() {
+                @Override
+                public void run() {
+                    mySwipeRefreshLayout.setRefreshing(true);
+                }
+            });
+
+            super.onPageStarted(view,url,favicon);
         }
     }
 
