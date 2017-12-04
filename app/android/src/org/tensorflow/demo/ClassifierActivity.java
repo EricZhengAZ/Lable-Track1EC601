@@ -159,6 +159,9 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
                     webView.removeAllViews();
                     webView.destroyDrawingCache();
                 }
+                else {
+                    webView.goBack();
+                }
             }
             else {
 
