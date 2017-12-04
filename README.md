@@ -8,7 +8,7 @@ The App is based on the Tensorflow example [TF Classify](https://github.com/tens
 To improve this model we are training our own dataset where we added more objects.
 The script that we are using to train our own model can be found [here](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/image_retraining/retrain.py)
 The models that we trained so far are available in the folder retrained_models.
-
+The scripts used and a brief explanation about retraining can be found in the folder image_retraining.
 The folder old_apps contains an iOS App that we are no longer using. It is a simple app for us to test our trained models at the beginning.
 
 # How to use
