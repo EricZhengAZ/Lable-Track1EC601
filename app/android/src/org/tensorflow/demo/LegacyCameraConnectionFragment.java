@@ -104,13 +104,15 @@ public class LegacyCameraConnectionFragment extends Fragment {
             toast.show();
           }
 
-          camera.setPreviewCallbackWithBuffer(imageListener);
-          Camera.Size s = camera.getParameters().getPreviewSize();
-          camera.addCallbackBuffer(new byte[ImageUtils.getYUVByteSize(s.height, s.width)]);
+          if(camera != null) {
+            camera.setPreviewCallbackWithBuffer(imageListener);
+            Camera.Size s = camera.getParameters().getPreviewSize();
+            camera.addCallbackBuffer(new byte[ImageUtils.getYUVByteSize(s.height, s.width)]);
 
-          textureView.setAspectRatio(s.height, s.width);
+            textureView.setAspectRatio(s.height, s.width);
 
-          camera.startPreview();
+            camera.startPreview();
+          }
         }
 
         @Override

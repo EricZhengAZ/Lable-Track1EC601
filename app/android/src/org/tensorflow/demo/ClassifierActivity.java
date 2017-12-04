@@ -36,12 +36,14 @@ import android.view.Display;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.webkit.WebBackForwardList;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.net.URLEncoder;
 import java.util.List;
 import java.util.Vector;
 import org.tensorflow.demo.OverlayView.DrawCallback;
@@ -146,7 +148,22 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
             signOut();
         }
         else if (webView.canGoBack()) {
-            webView.goBack();
+            WebBackForwardList mWebBackForwardList = webView.copyBackForwardList();
+            if (mWebBackForwardList.getCurrentIndex() > 0) {
+                String historyUrl = mWebBackForwardList.getItemAtIndex(mWebBackForwardList.getCurrentIndex() - 1).getUrl();
+                if (historyUrl.contains("about:blank")) {
+                    webView.setVisibility(View.INVISIBLE);
+                    findViewById(R.id.swipe_container).setVisibility(View.INVISIBLE);
+                    webView.clearHistory();
+                    webView.clearCache(true);
+                    webView.removeAllViews();
+                    webView.destroyDrawingCache();
+                }
+            }
+            else {
+
+                webView.goBack();
+            }
         }
         else
         {
@@ -156,7 +173,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
             webView.clearCache(true);
             webView.removeAllViews();
             webView.destroyDrawingCache();
-            webView.destroy();
+            //webView.destroy();
         }
     }
     @Override
@@ -254,7 +271,16 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
               }
 
               if (max_score > 0.30) {
-                buy_link = base_link + best.getTitle();
+
+                  try
+                  {
+                      buy_link = base_link + URLEncoder.encode(best.getTitle(), "UTF-8");
+                  }
+                  catch (Exception e)
+                  {
+                      buy_link = base_link + best.getTitle();
+                  }
+
 
                 final Classifier.Recognition best_p = best;
 
@@ -307,8 +333,10 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
       if (buy_link == null || buy_link.compareTo("") == 0)
           return;
 
+      System.out.println("buy link " + buy_link);
       //Intent i = new Intent(Intent.ACTION_WEB_SEARCH,Uri.parse(buy_link));
       //startActivityForResult(i,1000);
+
 
       if (webView == null)
           webView = (WebView) findViewById(R.id.webview);
@@ -330,7 +358,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
 
 
 
-
+      webView.loadUrl("about:blank");
       webView.setWebViewClient(new MyWebViewClient());
       webView.getSettings().setJavaScriptEnabled(true);
       webView.setVisibility(View.VISIBLE);
@@ -351,6 +379,8 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
     private class MyWebViewClient extends WebViewClient {
         @Override
         public void onPageFinished(WebView view, String url) {
+            //if(url.contains("about:blank"))
+              //  webView.goBack();
             mySwipeRefreshLayout.setRefreshing(false);
             buy_link = url;
             super.onPageFinished(view, url);
