@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "151358060456",
+    "firebase_url": "https://android-32067.firebaseio.com",
+    "project_id": "android-32067",
+    "storage_bucket": "android-32067.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151358060456:android:b01db18433589acd",
+        "android_client_info": {
+          "package_name": "org.tensorflow.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "151358060456-9onbi22tlfrqhds247dqd4rfibmuu0u9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.tensorflow.demo",
+            "certificate_hash": "6fe165453b5248878197b73287ed9e3233812e83"
+          }
+        },
+        {
+          "client_id": "151358060456-gu4nap914tbemkfvrq6ib2bivjbdlfbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZASH-W7f0RWRpuCxmIKfKskPi6v1nExY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "151358060456-gu4nap914tbemkfvrq6ib2bivjbdlfbs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
