@@ -10,12 +10,12 @@ The models that we trained so far are available in the folder retrained_models.
 The scripts used and a brief explanation about retraining can be found in the folder image_retraining.
 
 
-# How to use
+## How to use
 To build our project open the folder app/android with Android studio. All the dependacies should download automatically and the App will be ready to be installed.
 
 If Android studio gives you an error message when it tries to launch the App then disable instant run in File -> Settings -> Build,Execution, Deployment -> Instant Run
 
-# Content
+## Content
 ### app
 The android app, which is our final product.
 ### image retraining
@@ -25,7 +25,7 @@ The models we trained for our product. We provide different versions if anyone w
 ### use our model in iOS
 The folder old_apps contains an iOS App that we are no longer using. It is a simple app for us to test our trained models at the beginning. It also gives a breif idea about how to use tensorflow trained models for iOS app.
 
-# Reference: 
+## Reference: 
 
 https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/ios
 
