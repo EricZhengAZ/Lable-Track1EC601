@@ -8,7 +8,7 @@ To improve this model we are training our own dataset where we added more object
 The script that we are using to train our own model can be found [here](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/image_retraining/retrain.py)
 The models that we trained so far are available in the folder retrained_models.
 The scripts used and a brief explanation about retraining can be found in the folder image_retraining.
-
+<img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/app/screenshot/WechatIMG187.jpeg" width = "270" height = "480" alt="Laptop" align=center /> <img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/old_apps/iOS_app/samples/IMG_1377.PNG" width = "270" height = "480" alt="Keyboard" align=center />  <img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/app/screenshot/WechatIMG189.jpeg" width = "270" height = "480" alt="Laptop" align=center /> <img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/old_apps/iOS_app/samples/IMG_1377.PNG" width = "270" height = "480" alt="Keyboard" align=center /> 
 
 ## How to use
 To build our project open the folder app/android with Android studio. All the dependacies should download automatically and the App will be ready to be installed.
