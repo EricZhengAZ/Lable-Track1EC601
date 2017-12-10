@@ -16,13 +16,13 @@ To build our project open the folder app/android with Android studio. All the de
 If Android studio gives you an error message when it tries to launch the App then disable instant run in File -> Settings -> Build,Execution, Deployment -> Instant Run
 
 # Content
-## app
+### app
 The android app, which is our final product.
-## image retraining
+### image retraining
 This folder has the python code from Tensorflow on retraining models.
-## retrained models
+### retrained models
 The models we trained for our product. We provide different versions if anyone wanna use them.
-## use our model in iOS
+### use our model in iOS
 The folder old_apps contains an iOS App that we are no longer using. It is a simple app for us to test our trained models at the beginning. It also gives a breif idea about how to use tensorflow trained models for iOS app.
 
 # Reference: 
