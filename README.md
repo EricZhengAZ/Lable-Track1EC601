@@ -26,7 +26,7 @@ This folder has the python code from Tensorflow on retraining models.
 ### retrained models
 The models we trained for our product. We provide different versions if anyone wanna use them.
 ### use our model in iOS
-The folder old_apps contains an iOS App that we are no longer using. It is a simple app for us to test our trained models at the beginning. It also gives a breif idea about how to use tensorflow trained models for iOS app.
+This folder contains an iOS App that we are no longer using. It is a simple app for us to test our trained models at the beginning. It also gives a breif idea about how to use tensorflow trained models for iOS app. Anyone who wants to try our model on iOS can start with this app.
 
 ## Reference: 
 
