@@ -1,0 +1,152 @@
+* daemon not running. starting it now at tcp:5037 *
+* daemon started successfully *
+:Monkey: seed=1513569484235 count=500
+:AllowPackage: org.tensorflow.demo
+:IncludeCategory: android.intent.category.LAUNCHER
+:IncludeCategory: android.intent.category.MONKEY
+// Event percentages:
+//   0: 15.0%
+//   1: 10.0%
+//   2: 2.0%
+//   3: 15.0%
+//   4: -0.0%
+//   5: 25.0%
+//   6: 15.0%
+//   7: 2.0%
+//   8: 2.0%
+//   9: 1.0%
+//   10: 13.0%
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=org.tensorflow.demo/.LogInActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=org.tensorflow.demo/.LogInActivity } in package org.tensorflow.demo
+    // Allowing start of Intent { cmp=org.tensorflow.demo/.ClassifierActivity } in package org.tensorflow.demo
+    // activityResuming(org.tensorflow.demo)
+:Sending Touch (ACTION_DOWN): 0:(678.0,209.0)
+:Sending Touch (ACTION_UP): 0:(676.1294,211.18958)
+:Sending Touch (ACTION_DOWN): 0:(611.0,1372.0)
+:Sending Touch (ACTION_UP): 0:(611.2966,1348.7458)
+:Sending Touch (ACTION_DOWN): 0:(721.0,498.0)
+:Sending Touch (ACTION_UP): 0:(721.89105,494.80112)
+:Sending Touch (ACTION_DOWN): 0:(602.0,1679.0)
+:Sending Touch (ACTION_UP): 0:(601.77466,1685.9489)
+:Sending Touch (ACTION_DOWN): 0:(66.0,1218.0)
+:Sending Touch (ACTION_UP): 0:(51.954887,1206.6986)
+:Sending Trackball (ACTION_MOVE): 0:(-3.0,2.0)
+:Sending Touch (ACTION_DOWN): 0:(982.0,999.0)
+:Sending Touch (ACTION_UP): 0:(925.29865,943.5243)
+:Sending Touch (ACTION_DOWN): 0:(636.0,1820.0)
+:Sending Touch (ACTION_UP): 0:(647.295,1877.2747)
+:Sending Trackball (ACTION_MOVE): 0:(1.0,0.0)
+:Sending Trackball (ACTION_UP): 0:(0.0,0.0)
+:Sending Touch (ACTION_DOWN): 0:(1034.0,1727.0)
+:Sending Touch (ACTION_UP): 0:(1031.1091,1716.322)
+:Sending Touch (ACTION_DOWN): 0:(684.0,1821.0)
+:Sending Touch (ACTION_UP): 0:(671.88214,1838.5188)
+:Sending Touch (ACTION_DOWN): 0:(233.0,1526.0)
+:Sending Touch (ACTION_UP): 0:(193.11702,1542.947)
+:Sending Trackball (ACTION_MOVE): 0:(0.0,-5.0)
+:Sending Trackball (ACTION_MOVE): 0:(-2.0,4.0)
+    //[calendar_time:2017-12-13 20:48:26.896  system_uptime:819157543]
+    // Sending event #100
+:Sending Trackball (ACTION_MOVE): 0:(2.0,-5.0)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=org.tensorflow.demo/.LogInActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=org.tensorflow.demo/.LogInActivity } in package org.tensorflow.demo
+:Sending Trackball (ACTION_MOVE): 0:(-4.0,4.0)
+:Sending Trackball (ACTION_MOVE): 0:(-4.0,-4.0)
+:Sending Trackball (ACTION_MOVE): 0:(2.0,-5.0)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=org.tensorflow.demo/.LogInActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=org.tensorflow.demo/.LogInActivity } in package org.tensorflow.demo
+:Sending Touch (ACTION_DOWN): 0:(1074.0,1215.0)
+:Sending Touch (ACTION_UP): 0:(1046.9521,1219.7148)
+:Sending Touch (ACTION_DOWN): 0:(346.0,797.0)
+:Sending Touch (ACTION_UP): 0:(332.00684,796.9598)
+:Sending Trackball (ACTION_MOVE): 0:(0.0,1.0)
+:Switch: #Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;launchFlags=0x10200000;component=org.tensorflow.demo/.LogInActivity;end
+    // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=org.tensorflow.demo/.LogInActivity } in package org.tensorflow.demo
+:Sending Touch (ACTION_DOWN): 0:(574.0,411.0)
+:Sending Touch (ACTION_UP): 0:(577.5415,411.40457)
+:Sending Touch (ACTION_DOWN): 0:(309.0,1668.0)
+:Sending Touch (ACTION_UP): 0:(322.5141,1681.4742)
+:Sending Trackball (ACTION_MOVE): 0:(-1.0,0.0)
+    //[calendar_time:2017-12-13 20:48:27.663  system_uptime:819158153]
+    // Sending event #200
+    //[calendar_time:2017-12-13 20:48:27.664  system_uptime:819158153]
+    // Sending event #200
+:Sending Touch (ACTION_DOWN): 0:(483.0,1088.0)
+:Sending Touch (ACTION_UP): 0:(517.13324,1077.3452)
+:Sending Touch (ACTION_DOWN): 0:(850.0,1012.0)
+:Sending Touch (ACTION_UP): 0:(855.17834,1007.0622)
+:Sending Touch (ACTION_DOWN): 0:(220.0,1551.0)
+:Sending Touch (ACTION_UP): 0:(229.9424,1539.7809)
+:Sending Touch (ACTION_DOWN): 0:(890.0,732.0)
+:Sending Touch (ACTION_UP): 0:(885.4891,742.5842)
+    // Allowing start of Intent { cmp=org.tensorflow.demo/.LogInActivity } in package org.tensorflow.demo
+    // activityResuming(org.tensorflow.demo)
+:Sending Touch (ACTION_DOWN): 0:(196.0,1850.0)
+:Sending Touch (ACTION_UP): 0:(189.92331,1850.4917)
+:Sending Touch (ACTION_DOWN): 0:(992.0,850.0)
+:Sending Touch (ACTION_UP): 0:(992.08636,854.6924)
+:Sending Trackball (ACTION_MOVE): 0:(-5.0,-5.0)
+:Sending Trackball (ACTION_MOVE): 0:(2.0,0.0)
+:Sending Trackball (ACTION_MOVE): 0:(-5.0,1.0)
+:Sending Touch (ACTION_DOWN): 0:(750.0,1629.0)
+:Sending Touch (ACTION_UP): 0:(689.8683,1742.6913)
+    //[calendar_time:2017-12-13 20:48:30.326  system_uptime:819160816]
+    // Sending event #300
+    //[calendar_time:2017-12-13 20:48:30.327  system_uptime:819160816]
+    // Sending event #300
+:Sending Touch (ACTION_DOWN): 0:(102.0,1902.0)
+:Sending Touch (ACTION_UP): 0:(80.013916,1894.8206)
+:Sending Touch (ACTION_DOWN): 0:(949.0,169.0)
+:Sending Touch (ACTION_UP): 0:(954.66113,158.17908)
+:Sending Trackball (ACTION_MOVE): 0:(4.0,1.0)
+:Sending Touch (ACTION_DOWN): 0:(256.0,1681.0)
+:Sending Touch (ACTION_UP): 0:(337.25946,1629.0215)
+:Sending Touch (ACTION_DOWN): 0:(714.0,1273.0)
+:Sending Touch (ACTION_UP): 0:(695.9949,1275.692)
+:Sending Trackball (ACTION_MOVE): 0:(-4.0,2.0)
+:Sending Touch (ACTION_DOWN): 0:(526.0,1183.0)
+:Sending Touch (ACTION_UP): 0:(537.6319,1186.6754)
+:Sending Touch (ACTION_DOWN): 0:(868.0,642.0)
+:Sending Touch (ACTION_UP): 0:(859.42786,641.8476)
+:Sending Flip keyboardOpen=false
+:Sending Trackball (ACTION_MOVE): 0:(-4.0,-4.0)
+:Sending Touch (ACTION_DOWN): 0:(847.0,1495.0)
+:Sending Touch (ACTION_UP): 0:(851.9852,1492.1151)
+:Sending Touch (ACTION_DOWN): 0:(456.0,1839.0)
+:Sending Touch (ACTION_UP): 0:(468.76715,1825.7733)
+:Sending Trackball (ACTION_MOVE): 0:(2.0,-3.0)
+    //[calendar_time:2017-12-13 20:48:31.810  system_uptime:819162299]
+    // Sending event #400
+:Sending Touch (ACTION_DOWN): 0:(136.0,1627.0)
+:Sending Touch (ACTION_UP): 0:(130.89993,1641.5101)
+:Sending Touch (ACTION_DOWN): 0:(370.0,916.0)
+:Sending Touch (ACTION_UP): 0:(372.93185,914.95557)
+:Sending Touch (ACTION_DOWN): 0:(989.0,830.0)
+:Sending Touch (ACTION_UP): 0:(985.7502,830.14764)
+:Sending Trackball (ACTION_MOVE): 0:(-2.0,1.0)
+:Sending Trackball (ACTION_UP): 0:(0.0,0.0)
+:Sending Touch (ACTION_DOWN): 0:(539.0,1777.0)
+:Sending Touch (ACTION_UP): 0:(553.85645,1782.3074)
+:Sending Trackball (ACTION_MOVE): 0:(-4.0,1.0)
+:Sending Touch (ACTION_DOWN): 0:(583.0,422.0)
+:Sending Touch (ACTION_UP): 0:(578.13934,424.73474)
+:Sending Trackball (ACTION_MOVE): 0:(2.0,-2.0)
+:Sending Touch (ACTION_DOWN): 0:(679.0,228.0)
+:Sending Touch (ACTION_UP): 0:(647.6386,252.1973)
+    // Rejecting start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] cmp=com.sec.android.app.launcher/com.android.launcher2.Launcher } in package com.sec.android.app.launcher
+    // Injection Failed
+:Sending Touch (ACTION_DOWN): 0:(94.0,1194.0)
+:Sending Touch (ACTION_UP): 0:(80.15468,1186.5078)
+:Sending Touch (ACTION_DOWN): 0:(436.0,1867.0)
+:Sending Touch (ACTION_UP): 0:(441.60306,1870.7897)
+:Sending Touch (ACTION_DOWN): 0:(431.0,1514.0)
+:Sending Touch (ACTION_UP): 0:(434.27182,1512.8549)
+:Sending Touch (ACTION_DOWN): 0:(596.0,1725.0)
+:Sending Touch (ACTION_UP): 0:(595.9547,1710.4026)
+:Sending Flip keyboardOpen=true
+:Sending Touch (ACTION_DOWN): 0:(323.0,1006.0)
+Events injected: 500
+:Sending rotation degree=0, persist=false
+:Dropped: keys=1 pointers=0 trackballs=0 flips=0 rotations=0
+## Network stats: elapsed time=16260ms (0ms mobile, 0ms wifi, 16260ms not connected)
+// Monkey finished
