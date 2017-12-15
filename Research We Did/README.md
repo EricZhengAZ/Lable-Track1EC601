@@ -29,6 +29,12 @@ The last two websites are blog in Chinese.
 ## Preparation on PC
 And then, we tried to do recognition on PC because we found that develop applicaition in IOS is not that practical for us. (Three of us have Windows laptop instead of Mac laptop.) So we decided to do some research on PC before we start building a android app.
 
+There is a project that is very cool to watch. It can recognize multiple stuffs at the same time. For example:
+
+<img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/Research%20We%20Did/pic/kites_detections_output.jpg" width = "800" height = "480" alt="Laptop" align=center />
+
+And the GitHub link of this project is also listed below.
+
 Our reference of this part are  listed below:
 
 https://towardsdatascience.com/building-a-real-time-object-recognition-app-with-tensorflow-and-opencv-b7a2b4ebdc32
@@ -40,4 +46,14 @@ https://github.com/tensorflow/models
 https://github.com/opencv/opencv/tree/master/samples
 
 ## Preparation on Android
-At last we started to build our application on Android, 
+At last we started to build our application on Android. For this part we use a example app called TF Classify to build our own application. We've done many research about how to develop apps on Android. The model we get after training can not be directly used on mobile deivces. 
+We have to remove some unsurpported ops to make the model work. And then we still have to optimize the model for Android.
+
+Here are some references of Android app developing and optimize model for Android:
+
+https://www.tensorflow.org/tutorials/image_retraining
+
+https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/android
+
+http://blog.csdn.net/chufazhe/article/details/53835088
+
