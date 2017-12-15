@@ -4,12 +4,10 @@
 At first, we had not decided which platform to develope our application on. So we have tried to do some research on IOS. 
 And then we use an example app to build our first demo. 
 
-As shown in the use_our_model_in_IOS folder, our first demo worked well for recognize random stuffs and some natural things:
+As shown in the use_our_model_in_IOS folder, our first demo worked well for recognize random stuffs and some natural things.
 
 
-<img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/use_our_model_in_iOS/iOS_app/samples/IMG_1378.PNG" width = "270" height = "480" alt="Laptop" align=center /> <img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/use_our_model_in_iOS/iOS_app/samples/IMG_1377.PNG" width = "270" height = "480" alt="Keyboard" align=center />  <img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/use_our_model_in_iOS/iOS_app/samples/IMG_1379.PNG" width = "270" height = "480" alt="Keyboard" align=center />
-
-<img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/use_our_model_in_iOS/iOS_app/samples/IMG_1380.PNG" width = "270" height = "480" alt="Keyboard" align=center /> <img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/use_our_model_in_iOS/iOS_app/samples/IMG_1381.PNG" width = "270" height = "480" alt="Keyboard" align=center /> <img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/use_our_model_in_iOS/iOS_app/samples/IMG_1382.PNG" width = "270" height = "480" alt="Keyboard" align=center />
+<img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/Research%20We%20Did/pic/TULIPS.png" width = "270" height = "480" alt="Laptop" align=center /> <img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/Research%20We%20Did/pic/daisy.jpg" width = "270" height = "480" alt="Keyboard" align=center />  
 
 Our reference of this part are listed below:
 
