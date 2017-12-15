@@ -4,12 +4,17 @@
 At first, we had not decided which platform to develope our application on. So we have tried to do some research on IOS. 
 And then we use an example app to build our first demo. 
 
-As shown in the use_our_model_in_IOS folder, our first demo worked well for recognize random stuffs and some natural things.
-
+There is also a website which will be listed in the below reference that is a detailed tutorial for build application via Tensorflow.
 
 <img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/Research%20We%20Did/pic/TULIPS.png" width = "270" height = "480" alt="Laptop" align=center /> <img src="https://github.com/EricZhengAZ/Lable-Track1EC601/blob/master/Research%20We%20Did/pic/daisy.jpg" width = "270" height = "480" alt="Keyboard" align=center />  
 
+As shown in the use_our_model_in_IOS folder, our first demo worked well for recognize random stuffs and some natural things.
+
 Our reference of this part are listed below:
+
+https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/index.html#2
+
+https://petewarden.com/2016/09/27/tensorflow-for-mobile-poets/
 
 http://machinethink.net/blog/tensorflow-on-ios/
 
